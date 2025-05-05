@@ -11,7 +11,7 @@ const SECRET_KEY = process.env.JWT_SECRET || "mysecret";
 router.use(cookieParser());
 router.use(
   cors({
-    origin: process.env.FRONTEND_URL || process.env.FRONTEND_URL_VERCEL, // Use FRONTEND_URL from .env
+    origin: process.env.FRONTEND_URL_VERCEL || process.env.FRONTEND_URL, // Use FRONTEND_URL from .env
     credentials: true, // Allow sending cookies from frontend
   })
 );

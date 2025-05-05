@@ -19,7 +19,7 @@ app.use(cookieParser()); // ✅ Sử dụng middleware
 
 app.use(
   cors({
-    origin: process.env.FRONTEND_URL_VERCEL || process.env.FRONTEND_URL, // Đúng domain frontend
+    origin: 'https://tlshop-fe-trieu3105s-projects.vercel.app' || 'http://localhost:3000', // Đúng domain frontend
     credentials: true, // Bắt buộc để gửi cookie
   })
 );
