@@ -17,21 +17,15 @@ if (!process.env.PORT) {
 const app = express();
 app.use(cookieParser()); // ✅ Sử dụng middleware
 
-const allowedOrigins = [
-  "http://localhost:3000",
-  "https://tlshop-asvrutnla-trieu3105s-projects.vercel.app"
-];
-
-app.use(cors({
-  origin: function (origin, callback) {
-    if (!origin || allowedOrigins.includes(origin)) {
-      callback(null, true)
-    } else {
-      callback(new Error("Not allowed by CORS"))
-    }
-  },
-  credentials: true
-}));
+app.use(
+  cors({
+    origin: [
+      process.env.FRONTEND_URL,
+      process.env.FRONTEND_URL_VERCEL,
+    ],
+    credentials: true,
+  })
+);
 
 app.use(express.json());
 
