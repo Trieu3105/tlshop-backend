@@ -43,7 +43,7 @@ router.get("/products", async (req, res) => {
     const [categories] = await db.query(`SELECT * FROM categories`);
     const [brands] = await db.query(`SELECT * FROM brands`);
 
-    // console.log("Fetched products:", products); // Debugging: Log raw products data
+    console.log("Fetched products:", products); // Debugging: Log raw products data
     // console.log("Fetched categories:", categories); // Debugging: Log categories
     // console.log("Fetched brands:", brands); // Debugging: Log brands
 
