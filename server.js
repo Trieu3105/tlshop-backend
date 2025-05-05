@@ -19,7 +19,7 @@ app.use(cookieParser()); // ✅ Sử dụng middleware
 
 app.use(
   cors({
-    origin: process.env.FRONTEND_URL || process.env.FRONTEND_URL_VERCEL, // Đúng domain frontend
+    origin: process.env.FRONTEND_URL_VERCEL || process.env.FRONTEND_URL, // Đúng domain frontend
     credentials: true, // Bắt buộc để gửi cookie
   })
 );
